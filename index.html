@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
 <head>
 	<title>Covid-19 Estimator</title>
 	<meta charset="utf-8">
@@ -8,6 +8,7 @@
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<meta description="Covid-19 Estimator for SDG Assessment">
 </head>
 <body>
 	<nav class="navbar navbar-light bg-dark">
@@ -25,19 +26,19 @@
 				<div class="div1">
 					<div class="form-group">
 						<label for="data-region-name">Area</label>
-						<input type="text" name="data-region-name" class="form-control rounded-0" placeholder="e.g America" required>
+						<input type="text" name="data-region-name" id="data-region-name" class="form-control rounded-0" placeholder="e.g America" required>
 					</div>
 					<div class="form-group">
 						<label for="data-avgAge">Average Age:</label>
-						<input type="text" name="data-avgAge" class="form-control rounded-0" placeholder="22.1" required>
+						<input type="text" name="data-avgAge" id="data-avgAge" class="form-control rounded-0" placeholder="22.1" required>
 					</div>
 					<div class="form-group">
 						<label for="data-avgDailyIncomeInUSD">Average Daily Income In USD</label>
-						<input type="text" name="data-avgDailyIncomeInUSD" class="form-control rounded-0" placeholder="e.g 5" required>
+						<input type="text" name="data-avgDailyIncomeInUSD" id="data-avgDailyIncomeInUSD" class="form-control rounded-0" placeholder="e.g 5" required>
 					</div>
 					<div class="form-group">
 						<label for="data-avgDailyIncomePopulation">Average Daily Income Population</label>
-						<input type="text" name="data-avgDailyIncomePopulation" class="form-control rounded-0" placeholder="e.g 0.12" required>
+						<input type="text" name="data-avgDailyIncomePopulation" id="data-avgDailyIncomePopulation" class="form-control rounded-0" placeholder="e.g 0.12" required>
 					</div>
 	<button type="button" class="btn btn-dark btn-block rounded-0 next" name="">Next</button>
 			</div>
@@ -46,21 +47,21 @@
 				<div class="div2">
 					<div class="form-group">
 						<label for="data-reported-cases">Reported Cases</label>
-						<input type="text" name="data-reported-cases" class="form-control rounded-0" placeholder="e.g 845" required>
+						<input type="text" name="data-reported-cases" id="data-reported-cases" class="form-control rounded-0" placeholder="e.g 845" required>
 					</div>
 					<div class="form-group">
 						<label for="data-population">Population</label>
-						<input type="text" name="data-population" class="form-control rounded-0" placeholder="200" required>
+						<input type="text" name="data-population" id="data-population" class="form-control rounded-0" placeholder="200" required>
 					</div>
 					<div class="form-group">
 						<div class="row">
 							<div class="col-md-6">
 								<label for="data-time-to-elapse">Period</label>
-								<input type="number" min="1" name="data-time-to-elapse" class="form-control rounded-0" required>
+								<input type="number" min="1" name="data-time-to-elapse" id="data-time-to-elapse" class="form-control rounded-0" required>
 							</div>
 							<div class="col-md-6">
 								<label for="data-period-type">Period Type</label>
-								<select name="data-period-type" class="form-control rounded-0" required>
+								<select name="data-period-type" id="data-period-type" class="form-control rounded-0" required>
 									<option>--Select Period Type--</option>
 									<option value="days">days</option>
 									<option value="weeks">weeks</option>
@@ -71,7 +72,7 @@
 					</div>
 					<div class="form-group">
 						<label for="data-total-hospital-beds">Total Hospital Bed</label>
-						<input type="text" name="data-total-hospital-beds" class="form-control rounded-0" placeholder="e.g 40" required>
+						<input type="text" name="data-total-hospital-beds" id="data-total-hospital-beds" class="form-control rounded-0" placeholder="e.g 40" required>
 					</div>
 				<button type="button" class="btn btn-dark btn-block rounded-0 prev" name="">Previous</button>
 					<button class="btn btn-dark btn-block rounded-0" name="data-go-
