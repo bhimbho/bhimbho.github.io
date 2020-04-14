@@ -6,9 +6,28 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<meta description="Covid-19 Estimator for SDG Assessment">
+	<meta name="description" content= "Covid-19 Estimator for SDG Assessment">
 </head>
+<style type="text/css">
+	.side{
+    background-image: url('images/estimator.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+.form-control:focus{
+    box-shadow: none;
+    border-color: grey;
+}
+.div2{
+    display: none;
+}
+@media(max-width: 575px){
+    .side{
+        background-image: 
+    }
+</style>
 <body>
 	<nav class="navbar navbar-light bg-dark">
 		  <a class="navbar-brand text-white" href="#">
@@ -21,7 +40,7 @@
 		<div class="col-md-5  mt-5">
 			<div class="col-md-8 offset-md-2 mt-5">		
 				<h3><i class="fa fa-sticky-note"></i>Sample Data Collector</h3><hr>
-				<form action="" method="post">
+				<form action="" method="post" id="myform">
 				<div class="div1">
 					<div class="form-group">
 						<label for="data-region-name">Area</label>
@@ -74,8 +93,7 @@
 						<input type="text" name="data-total-hospital-beds" id="data-total-hospital-beds" class="form-control rounded-0" placeholder="e.g 40" required>
 					</div>
 				<button type="button" class="btn btn-dark btn-block rounded-0 prev" name="">Previous</button>
-					<button class="btn btn-dark btn-block rounded-0" name="data-go-
-	estimate">Estimate</button>
+					<button class="btn btn-dark btn-block rounded-0" name="data-go-estimate" id="data-go-estimate">Estimate</button>
 	
 			</div>
 			<!-- end second form -->
@@ -103,6 +121,22 @@
 		$('.prev').click(function(){
 			$('.div1').fadeIn();
 			$('.div2').fadeOut();
+		});
+
+
+		$('#data-go-estimate').click(function(e){
+			e.preventDefault();
+			var data = $('#myform').serialize();
+			// console.log(data);
+			$.ajax({
+				url:"https://intrusion-detection-system.000webhostapp.com/api/v1/on-covid-19/",
+				type: 'POST',
+				dataType:'json',
+				data:data,
+				success:function(response){
+					console.log(response);
+				},
+			});
 		});
 	});
 </script>
